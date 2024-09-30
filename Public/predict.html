@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict - Molecular Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.jpg" width="60px" alt="App Logo" class="logo-image">
+            <div class="logo-text">Molecular Explorer</div>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="predict.html">Predict</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+
+    <style>
+        body {
+            color: antiquewhite; /* Text color for the body */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .transparent-container {
+            background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+            color: black; /* Text color inside the container */
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+
+    <div class="transparent-container">
+        <!-- Predict Section -->
+        <section class="predict">
+            <h2>Molecular Prediction</h2>
+            <form id="predict-form">
+                <!-- Number of Hydrogen Atoms -->
+                <div class="form-group">
+                    <label for="nHM">Number of Hydrogen Atoms (nHM)</label>
+                    <input type="number" id="nHM" name="nHM" placeholder="Enter number of H atoms" required>
+                </div>
+
+                <!-- Number of Oxygen Atoms -->
+                <div class="form-group">
+                    <label for="nO">Number of Oxygen Atoms (nO)</label>
+                    <input type="number" id="nO" name="nO" placeholder="Enter number of O atoms" required>
+                </div>
+
+                <!-- Number of Nitrogen-Nitrogen Bonds -->
+                <div class="form-group">
+                    <label for="nN_N">Number of Nitrogen-Nitrogen Bonds (nN_N)</label>
+                    <input type="number" id="nN_N" name="nN_N" placeholder="Enter number of N-N bonds" required>
+                </div>
+
+                <!-- F01_N_N (specific descriptor) -->
+                <div class="form-group">
+                    <label for="F01_N_N">F01_N_N (specific descriptor)</label>
+                    <input type="text" id="F01_N_N" name="F01_N_N" placeholder="Enter specific descriptor" required>
+                </div>
+
+                <!-- Number of Aromatic NO2 Groups -->
+                <div class="form-group">
+                    <label for="nArNO2">Number of Aromatic NO2 Groups (nArNO2)</label>
+                    <input type="number" id="nArNO2" name="nArNO2" placeholder="Enter number of ArNO2 groups" required>
+                </div>
+
+                <!-- Start Prediction Button -->
+                <button type="submit" class="cta-button">Start Prediction</button>
+            </form>
+
+            <!-- Prediction Result Display -->
+            <div id="prediction-result" class="result-container"></div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Molecular Explorer. All rights reserved.</p>
+        <p>Contact us: contact@molecularexplore.com</p>
+        <p>Version 1.0.0</p>
+    </footer>
+
+    <script src="predict.js"></script>
+</body>
+</html>
